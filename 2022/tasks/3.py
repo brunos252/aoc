@@ -1,5 +1,4 @@
 with open("../input/3.txt") as f:
-    # lines = f.read().strip().split("\n")
     lines = f.readlines()
 
 priorities1 = 0
