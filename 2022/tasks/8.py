@@ -22,18 +22,15 @@ def pass_left_right(trees):
     return visible
 
 with open("./2022/input/8.txt") as f:
-    trees = np.array([[int(x) for x in line.rstrip()] for line in f.readlines()])
-
-visible = pass_left_right(trees)
-trees = np.rot90(trees)
-visible = np.logical_or(visible, np.rot90(pass_left_right(trees), 3))
-print(visible.sum())
-
-
-with open("./2022/input/8.txt") as f:
     trees = [[int(x) for x in line.rstrip()] for line in f.readlines()]
 
-dim = len(trees)
+np_trees = np.array(trees)
+visible = pass_left_right(np_trees)
+np_trees = np.rot90(np_trees)
+visible = np.logical_or(visible, np.rot90(pass_left_right(np_trees), 3))
+print(visible.sum())
+
+dim = len(np_trees)
 
 scenic_score = [[1 for _ in range(dim)] for _ in range(dim)]
 
