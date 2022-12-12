@@ -44,4 +44,5 @@ for i in range(len(grid)):
         if grid[i][j] == 0:
             steps.append(bfs(grid, (i, j), end))
 
+print(bfs(grid, start, end))
 print(min(i for i in steps if i))
